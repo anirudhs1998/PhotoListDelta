@@ -101,6 +101,7 @@ public class MainActivity extends AppCompatActivity {
                      int p = Integer.parseInt(removeText.getText().toString());
                      Object item = adapter.getItem(p-1);
                      adapter.remove((PhotoList) item);
+                     enterItem.setText("");
                      adapter.notifyDataSetChanged();
 
 

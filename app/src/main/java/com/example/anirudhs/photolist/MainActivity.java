@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
     private Uri mCapturedImageURI;
     private static final int RESULT_LOAD_IMAGE = 1;
     private static final int REQUEST_IMAGE_CAPTURE = 2;
-    EditText enterItem;
+    EditText enterItem,removeText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
         Button secondButton = (Button)findViewById(R.id.secondButton);
         Button removeButton = (Button)findViewById(R.id.removeButton);
         enterItem = (EditText) findViewById(R.id.enterItem);
+        removeText = (EditText)findViewById(R.id.removeText);
         myList = (ListView) findViewById(R.id.myList);
         photoList = new ArrayList<>();
 
@@ -97,6 +98,10 @@ public class MainActivity extends AppCompatActivity {
              new Button.OnClickListener(){
                  @Override
                  public void onClick(View view) {
+                     int p = Integer.parseInt(removeText.getText().toString());
+                     Object item = adapter.getItem(p-1);
+                     adapter.remove((PhotoList) item);
+                     adapter.notifyDataSetChanged();
 
 
                      adapter.notifyDataSetChanged();

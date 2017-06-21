@@ -42,6 +42,7 @@
         android:layout_toLeftOf="@+id/removeButton"
         android:hint="Enter position to Remove"
         android:textSize="20dp"
+        android:id="@+id/removeText"
         android:textColorHint="#696969"
         android:textColor="#FFFFFF"
         />
